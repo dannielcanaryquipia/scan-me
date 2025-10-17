@@ -1,0 +1,245 @@
+/* Product Details Page Styles */
+.product-details-page {
+  min-height: 100vh;
+  background-color: var(--background-primary);
+  padding: var(--spacing-20) 0 var(--spacing-16) 0;
+}
+
+/* Back Button */
+.product-details-back {
+  margin-bottom: var(--spacing-8);
+}
+
+.product-back-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-3) var(--spacing-5);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  transition: all var(--transition-fast);
+}
+
+.product-back-btn:hover {
+  transform: translateX(-4px);
+}
+
+.product-back-btn-icon {
+  transition: transform var(--transition-fast);
+}
+
+.product-back-btn:hover .product-back-btn-icon {
+  transform: translateX(-2px);
+}
+
+/* Product Details Grid */
+.product-details-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-8);
+}
+
+/* Product Label Section - Full width on its own row */
+.product-details-label {
+  order: 1;
+  grid-column: 1 / -1;
+}
+
+/* Product Content and Images Container */
+.product-details-main {
+  order: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-8);
+}
+
+/* Product Images Section */
+.product-details-images {
+  order: 2;
+}
+
+/* Product Content Section */
+.product-details-content {
+  order: 1;
+}
+
+/* Product Not Found */
+.product-not-found {
+  text-align: center;
+  padding: var(--spacing-16) var(--spacing-8);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.product-not-found-title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin: 0 0 var(--spacing-4) 0;
+}
+
+.product-not-found-text {
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+  margin: 0 0 var(--spacing-8) 0;
+  line-height: var(--line-height-relaxed);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .product-details-page {
+    padding: var(--spacing-16) 0 var(--spacing-12) 0;
+  }
+
+  .product-details-main {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-10);
+  }
+
+  .product-details-content {
+    order: 1;
+  }
+
+  .product-details-images {
+    order: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-details-page {
+    padding: var(--spacing-12) 0 var(--spacing-8) 0;
+  }
+
+  .product-details-main {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-12);
+    align-items: start;
+  }
+
+  .product-details-content {
+    order: 1;
+  }
+
+  .product-details-images {
+    order: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-details-page {
+    padding: var(--spacing-12) 0 var(--spacing-8) 0;
+  }
+
+  .product-details-back {
+    margin-bottom: var(--spacing-6);
+  }
+
+  .product-back-btn {
+    padding: var(--spacing-2) var(--spacing-4);
+    font-size: var(--font-size-sm);
+  }
+
+  .product-details-grid {
+    gap: var(--spacing-6);
+  }
+
+  .product-details-main {
+    gap: var(--spacing-6);
+  }
+}
+
+@media (max-width: 640px) {
+  .product-details-page {
+    padding: var(--spacing-8) 0 var(--spacing-6) 0;
+  }
+
+  .product-details-back {
+    margin-bottom: var(--spacing-4);
+  }
+
+  .product-back-btn {
+    padding: var(--spacing-2) var(--spacing-3);
+    font-size: var(--font-size-xs);
+  }
+
+  .product-details-grid {
+    gap: var(--spacing-4);
+  }
+
+  .product-details-main {
+    gap: var(--spacing-4);
+  }
+
+  .product-not-found {
+    padding: var(--spacing-8) var(--spacing-4);
+  }
+
+  .product-not-found-title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .product-not-found-text {
+    font-size: var(--font-size-base);
+  }
+}
+
+/* Animation for page load */
+.product-details-page {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading state */
+.product-details-grid.loading {
+  opacity: 0.7;
+}
+
+.product-details-grid.loading > * {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .product-back-btn {
+    border-width: 2px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .product-details-page {
+    animation: none;
+  }
+
+  .product-back-btn,
+  .product-back-btn-icon {
+    transition: none;
+  }
+
+  .product-back-btn:hover {
+    transform: none;
+  }
+
+  .product-back-btn:hover .product-back-btn-icon {
+    transform: none;
+  }
+}
