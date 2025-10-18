@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import ReviewBox from './ReviewBox';
 import './ProductContentCard.css';
 
-const ProductContentCard = ({ product, onReviewClick }) => {
+const ProductContentCard = ({ product }) => {
   const { name, description, price, sizes } = product;
   const [isExpanded, setIsExpanded] = useState(false);
   
@@ -9,17 +10,10 @@ const ProductContentCard = ({ product, onReviewClick }) => {
   const MAX_LENGTH = 200;
   const shouldTruncate = description.length > MAX_LENGTH;
   const displayDescription = isExpanded || !shouldTruncate 
-    ? description 
+    ? description
     : description.substring(0, MAX_LENGTH) + '...';
 
-  const handleReviewClick = () => {
-    // For now, we'll open a placeholder URL
-    // Later this will link to a Google Form
-    window.open('https://forms.google.com', '_blank');
-    if (onReviewClick) {
-      onReviewClick();
-    }
-  };
+  // replaced by ReviewBox
 
   return (
     <div className="product-content-card">
@@ -55,28 +49,7 @@ const ProductContentCard = ({ product, onReviewClick }) => {
       </div>
 
       <div className="product-content-actions">
-        <button 
-          className="btn btn-primary product-review-btn"
-          onClick={handleReviewClick}
-        >
-          <svg 
-            width="20" 
-            height="20" 
-            viewBox="0 0 24 24" 
-            fill="none" 
-            xmlns="http://www.w3.org/2000/svg"
-            className="product-review-btn-icon"
-          >
-            <path 
-              d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" 
-              stroke="currentColor" 
-              strokeWidth="2" 
-              strokeLinecap="round" 
-              strokeLinejoin="round"
-            />
-          </svg>
-          Leave a Review
-        </button>
+        <ReviewBox product={product} />
       </div>
     </div>
   );

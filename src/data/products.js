@@ -1,6 +1,6 @@
 import pastiyumLogo from '../assets/images/products/pastiyum/pastiyum-logo.jpg';
 import pastiyumLabel from '../assets/images/products/pastiyum/pastiyum-label.jpg';
-import pastiyumProduct1 from '../assets/images/products/pastiyum/pastiyum-product-1.jpg';
+
 import pastiyumProduct2 from '../assets/images/products/pastiyum/pastiyum-product-2.jpg';
 import pastiyumProduct3 from '../assets/images/products/pastiyum/pastiyum-product-3.jpg';
 
@@ -33,10 +33,11 @@ export const products = [
     name: "Pastiyum",
     price: 15.00,
     manufacturer: "ES'LADIESMA CO.",
+    reviewWebhookUrl: "https://script.google.com/macros/s/AKfycbwrEelc6fs70bxp-L8NM5Gm5xD0OxHsss_L0ofV12D_fdNovrDY54nt6FSgRKG5RRq-Vg/exec", // Replace with your Pastiyum Apps Script URL
+    googleSheetId: "14CSGeIU9_YXpQ2di55oqymDM3RXZV3G07Cw5PX-XoFs", // Pastiyum Google Sheet ID
     logo: pastiyumLogo,
     label: pastiyumLabel,
     productImages: [
-      pastiyumProduct1,
       pastiyumProduct2,
       pastiyumProduct3
     ],
@@ -47,6 +48,8 @@ export const products = [
     name: "Langka Chips",
     price: 35.00,
     manufacturer: "BoRoRo Bites Company",
+    reviewWebhookUrl: "https://script.google.com/macros/s/AKfycbwayofzFmyILVavKPSbH3F0V5jkqGTspHhV1cG2xwmOIUFM-KAFrd7PF0sR1a--U4Yu/exec", // Replace with your Langka Chips Apps Script URL
+    googleSheetId: "14V8YbK7XrSGKRi1k5eh3KXYDn_lTecuSdsq_nurwNmg", // Langka Chips Google Sheet ID
     logo: langkaLogo,
     label: langkaLabel,
     productImages: [
@@ -60,6 +63,8 @@ export const products = [
     name: "Palawan Chips",
     price: 12.00,
     manufacturer: "CAMZA Co.",
+    reviewWebhookUrl: "https://script.google.com/macros/s/AKfycbwFm1kYQVbIcdcwkTo2XhjVvcpEDUseInV1oxHZRr0Z6MvydF1c59cBZjQtV3JPHztd/exec", // Replace with your Palawan Chips Apps Script URL
+    googleSheetId: "1hDk0Xbn8n84a4Dy7LaC4mnq3aYjnUsS1tpXiF0VzRsA", // Palawan Chips Google Sheet ID
     logo: palawanLogo,
     label: palawanLabel,
     productImages: [
@@ -80,6 +85,8 @@ A new and unique kind of chip that will help promote local goods in Gubat becaus
     name: "Pilipulp",
     price: 20.00,
     manufacturer: "Pili Pulp Pastry",
+    reviewWebhookUrl: "https://script.google.com/macros/s/AKfycbyCWVxL-eiV3_TR4gKe5k10k-qN24t_EkSUZ1Px4abqtaYvsVp2XUhK5MVQ0OhfU5d8/exec", // Replace with your Pilipulp Apps Script URL
+    googleSheetId: "1WDvzWYTARmhBTyXry226k_pUvFuyxZE5Pir-HYmZMwY", // Pilipulp Google Sheet ID
     logo: pilipulpLogo,
     label: pilipulpLabel,
     productImages: [
@@ -93,6 +100,8 @@ A new and unique kind of chip that will help promote local goods in Gubat becaus
     name: "Pawpaya Crackers",
     price: 23.00,
     manufacturer: "Crispaya Co.",
+    reviewWebhookUrl: "https://script.google.com/macros/s/AKfycbzdtEAZ2E3ahyrxyljLR3HKfEEi3qx7FTSNWvyelpmF3-2c6tNqWILYWOFdNLINUX8S/exec", // Replace with your Pawpaya Crackers Apps Script URL
+    googleSheetId: "1Az-HVGHTVl0N5CJTLxBjQIrNTvJioNsffPGAjR-1VJk", // Pawpaya Crackers Google Sheet ID
     logo: pawpayaLogo,
     label: pawpayaLabel,
     productImages: [
