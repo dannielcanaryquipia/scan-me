@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
 import './ProductCard.css';
 
 const ProductCard = ({ product }) => {
-  const { id, name, price, logo, manufacturer } = product;
+  const { id, name, price, logo, description } = product;
+  
+  // Truncate description if too long
+  const MAX_DESCRIPTION_LENGTH = 100;
+  const truncatedDescription = description && description.length > MAX_DESCRIPTION_LENGTH
+    ? description.substring(0, MAX_DESCRIPTION_LENGTH) + '...'
+    : description;
 
   return (
     <Link to={`/products/${id}`} className="product-card-link">
@@ -21,8 +27,8 @@ const ProductCard = ({ product }) => {
         {/* Product Info */}
         <div className="product-card-content">
           <h3 className="product-card-title">{name}</h3>
-          {manufacturer && (
-            <p className="product-card-manufacturer">{manufacturer}</p>
+          {description && (
+            <p className="product-card-description">{truncatedDescription}</p>
           )}
           <p className="product-card-price">
             ₱{price.toFixed(2)}
@@ -38,4 +44,4 @@ const ProductCard = ({ product }) => {
   );
 };
 
-export default ProductCard;
+export default memo(ProductCard);

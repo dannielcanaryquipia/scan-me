@@ -1,15 +1,53 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { products } from '../data/products';
 import ProductCard from '../components/ProductCard';
 import './Products.css';
 
 const Products = () => {
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '50px'
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className="products-section">
+    <div className="products-section" ref={sectionRef}>
       {/* Products Grid */}
-      <div className="products-grid">
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
+      <div className={`products-grid ${isVisible ? 'visible' : ''}`}>
+        {products.map((product, index) => (
+          <div
+            key={product.id}
+            className="product-card-wrapper"
+            style={{
+              animationDelay: isVisible ? `${index * 0.1}s` : '0s'
+            }}
+          >
+            <ProductCard product={product} />
+          </div>
         ))}
       </div>
 

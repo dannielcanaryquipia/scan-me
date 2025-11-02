@@ -1,22 +1,76 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Products from './Products';
 import ImageCarousel from '../components/ImageCarousel';
+import ContactForm from '../components/ContactForm';
 import './Home.css';
 
 const Home = () => {
+  const productsSectionRef = useRef(null);
+  const aboutSectionRef = useRef(null);
+
+  useEffect(() => {
+    const observers = [];
+
+    // Observe products section
+    if (productsSectionRef.current) {
+      const productsObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              productsObserver.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.1,
+          rootMargin: '100px'
+        }
+      );
+      productsObserver.observe(productsSectionRef.current);
+      observers.push({ observer: productsObserver, target: productsSectionRef.current });
+    }
+
+    // Observe about section
+    if (aboutSectionRef.current) {
+      const aboutObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              aboutObserver.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.1,
+          rootMargin: '50px'
+        }
+      );
+      aboutObserver.observe(aboutSectionRef.current);
+      observers.push({ observer: aboutObserver, target: aboutSectionRef.current });
+    }
+
+    return () => {
+      observers.forEach(({ observer, target }) => {
+        observer.unobserve(target);
+      });
+    };
+  }, []);
+
   return (
     <div className="home-page">
       {/* Hero Section */}
       <section id="home" className="home-hero">
         <div className="container">
           <div className="home-hero-content">
-            <h1 className="home-hero-title">Welcome to <span className="home-hero-brand">ScanMe!</span></h1>
+            <h1 className="home-hero-title">Welcome to <span className="home-hero-brand">Kitchen One</span></h1>
             <p className="home-hero-subtitle">
-              Discover our range of delicious and healthy snacks made with local ingredients
+              Serving delicious pizzas, pastas, and more made with fresh ingredients and passion
             </p>
             <div className="home-hero-actions">
               <a href="#products" className="btn btn-primary home-hero-btn">
-                Explore Products
+                View Menu
               </a>
               <a href="#about" className="btn btn-secondary home-hero-btn">
                 Learn More
@@ -27,24 +81,24 @@ const Home = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="home-about">
+      <section id="about" ref={aboutSectionRef} className="home-about">
         <div className="container">
           <div className="home-about-content">
-            <h2 className="home-about-title">About ScanMe!</h2>
+            <h2 className="home-about-title">About Kitchen One</h2>
             <div className="home-about-grid">
               <div className="home-about-text">
                 <p className="home-about-description">
-                  ScanMe is your gateway to discovering exceptional local products from Gubat, Sorsogon. 
-                  We showcase a curated selection of handcrafted snacks and treats that celebrate the rich 
-                  flavors and traditions of our community.
+                  Kitchen One is your neighborhood restaurant dedicated to serving delicious, freshly prepared 
+                  pizzas, pastas, and sides. We use only the finest ingredients to create meals that bring 
+                  families and friends together around great food.
                 </p>
                 <p className="home-about-description">
-                  Our mission is to promote local businesses and provide you with access to high-quality, 
-                  authentic products that tell the story of our region. From traditional pastillas to 
-                  innovative chip varieties, each product represents the dedication and craftsmanship of 
-                  local producers.
+                  Our mission is simple: to serve high-quality, flavorful meals that satisfy your cravings 
+                  and create memorable dining experiences. From our signature pizzas to our creamy pastas, 
+                  every dish is crafted with care and attention to detail. Whether you're dining in, 
+                  ordering for takeout, or having it delivered, Kitchen One is committed to excellence 
+                  in every bite.
                 </p>
-                {/* Features removed as requested */}
               </div>
               <div className="home-about-image">
                 <ImageCarousel />
@@ -55,17 +109,20 @@ const Home = () => {
       </section>
 
       {/* Products Section */}
-      <section id="products" className="home-products">
+      <section id="products" ref={productsSectionRef} className="home-products">
         <div className="container">
           <div className="home-products-header">
-            <h2 className="home-products-title">Our Products</h2>
+            <h2 className="home-products-title">Our Menu</h2>
             <p className="home-products-subtitle">
-              Discover our range of delicious and healthy snacks
+              Explore our delicious selection of pizzas, pastas, and sides
             </p>
           </div>
           <Products />
         </div>
       </section>
+
+      {/* Contact Section */}
+      <ContactForm />
     </div>
   );
 };

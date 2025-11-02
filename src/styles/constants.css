@@ -1,9 +1,9 @@
 /* CSS Constants and Variables */
 :root {
   /* Colors */
-  --primary-color: #2563eb;
-  --primary-dark: #1d4ed8;
-  --primary-light: #3b82f6;
+  --primary-color: #000000;
+  --primary-dark: #000000;
+  --primary-light: #1a1a1a;
   --secondary-color: #64748b;
   --accent-color: #f59e0b;
   --text-primary: #1e293b;
@@ -23,6 +23,7 @@
   --theme-primary: var(--primary-color);
   --theme-primary-light: var(--primary-light);
   --theme-primary-dark: var(--primary-dark);
+  --primary-hover: #1a1a1a;
 
   /* Typography */
   --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
@@ -484,11 +485,11 @@ body {
 /* Dark Theme */
 [data-theme="dark"] {
   /* Dark theme colors */
-  --primary-color: #fbbf24;
-  --primary-dark: #f59e0b;
-  --primary-light: #fcd34d;
+  --primary-color: #D4AF37;
+  --primary-dark: #B8941F;
+  --primary-light: #E5C869;
   --secondary-color: #9ca3af;
-  --accent-color: #fbbf24;
+  --accent-color: #D4AF37;
   --text-primary: #f9fafb;
   --text-secondary: #d1d5db;
   --text-light: #9ca3af;

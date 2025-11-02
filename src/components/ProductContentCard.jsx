@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import ReviewBox from './ReviewBox';
 import './ProductContentCard.css';
 
 const ProductContentCard = ({ product }) => {
-  const { name, description, price, sizes } = product;
+  const { name, description, price, sizes, category, crustTypes, sliceTypes } = product;
   const [isExpanded, setIsExpanded] = useState(false);
   
   // Define the character limit for truncation
@@ -13,7 +12,8 @@ const ProductContentCard = ({ product }) => {
     ? description
     : description.substring(0, MAX_LENGTH) + '...';
 
-  // replaced by ReviewBox
+  // Check if product is a pizza
+  const isPizza = category === "Pizza";
 
   return (
     <div className="product-content-card">
@@ -35,6 +35,34 @@ const ProductContentCard = ({ product }) => {
         </div>
       </div>
 
+      {/* Crust Types - Only for Pizza */}
+      {isPizza && crustTypes && crustTypes.length > 0 && (
+        <div className="product-content-options">
+          <h3 className="product-content-options-title">Crust Type</h3>
+          <div className="product-options-grid">
+            {crustTypes.map((crust, index) => (
+              <div key={index} className="product-option-item">
+                <span className="product-option-label">{crust.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Slice Types - Only for Pizza */}
+      {isPizza && sliceTypes && sliceTypes.length > 0 && (
+        <div className="product-content-options">
+          <h3 className="product-content-options-title">Slice Type</h3>
+          <div className="product-options-grid">
+            {sliceTypes.map((slice, index) => (
+              <div key={index} className="product-option-item">
+                <span className="product-option-label">{slice.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       <div className="product-content-description">
         <h2 className="product-content-description-title">Description</h2>
         <p className="product-content-description-text">{displayDescription}</p>
@@ -46,10 +74,6 @@ const ProductContentCard = ({ product }) => {
             {isExpanded ? 'Read less' : 'Read more'}
           </button>
         )}
-      </div>
-
-      <div className="product-content-actions">
-        <ReviewBox product={product} />
       </div>
     </div>
   );

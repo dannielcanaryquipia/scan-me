@@ -1,113 +1,253 @@
-import pastiyumLogo from '../assets/images/products/pastiyum/pastiyum-logo.jpg';
-import pastiyumLabel from '../assets/images/products/pastiyum/pastiyum-label.jpg';
-
-import pastiyumProduct2 from '../assets/images/products/pastiyum/pastiyum-product-2.jpg';
-import pastiyumProduct3 from '../assets/images/products/pastiyum/pastiyum-product-3.jpg';
-
-import langkaLogo from '../assets/images/products/langka-chips/langka-chips-logo.jpg';
-import langkaLabel from '../assets/images/products/langka-chips/langka-chips-label.jpg';
-import langkaProduct1 from '../assets/images/products/langka-chips/langka-chips-product-1.jpg';
-import langkaProduct2 from '../assets/images/products/langka-chips/langka-chips-product-2.jpg';
-
-
-
-import palawanLogo from '../assets/images/products/palawan-chips/palawan-chips-logo.jpg';
-import palawanLabel from '../assets/images/products/palawan-chips/palawan-chips-label.jpg';
-import palawanProduct1 from '../assets/images/products/palawan-chips/palawan-chips-product-1.jpg';
-import palawanProduct2 from '../assets/images/products/palawan-chips/palawan-chips-product-2.jpg';
-import palawanProduct3 from '../assets/images/products/palawan-chips/palawan-chips-product-3.jpg';
-
-import pilipulpLogo from '../assets/images/products/pilipulp/pilipulp-logo.jpg';
-import pilipulpLabel from '../assets/images/products/pilipulp/pilipulp-label.jpg';
-import pilipulpProduct1 from '../assets/images/products/pilipulp/pilipulp-product-1.jpg';
-import pilipulpProduct2 from '../assets/images/products/pilipulp/pilipulp-product-2.jpg';
-
-import pawpayaLogo from '../assets/images/products/pawpaya-crackers/pawpaya-crackers-logo.jpg';
-import pawpayaLabel from '../assets/images/products/pawpaya-crackers/pawpaya-crackers-label.jpg';
-import pawpayaProduct1 from '../assets/images/products/pawpaya-crackers/pawpaya-crackers-product-1.jpg';
-import pawpayaProduct2 from '../assets/images/products/pawpaya-crackers/pawpaya-crackers-product-2.jpg';
+import kitchenOneSpecial from '../assets/images/Kitchen One Special.jpeg';
+import allMeat from '../assets/images/All-meat.jpeg';
+import cheese from '../assets/images/Cheese.jpeg';
+import hawaiian from '../assets/images/Hawaiian.jpeg';
+import pepperoniHam from '../assets/images/Pepperoni and Ham.jpeg';
+import alohaChickenBBQ from '../assets/images/Aloha Chicken BBQ.jpeg';
+import creamyChickenPasta from '../assets/images/Creamy Chicken and Ham Pasta.jpeg';
+import orientalSpicyPasta from '../assets/images/Oriental Spicy Chicken Pasta.jpeg';
+import tunaPasta from '../assets/images/Tuna Pasta in Fresh Tomatoes and Basil.jpeg';
+import potatoWedges from '../assets/images/Potato Wedges.jpeg';
 
 export const products = [
   {
     id: 1,
-    name: "Pastiyum",
-    price: 15.00,
-    manufacturer: "ES'LADIESMA CO.",
-    reviewWebhookUrl: "https://script.google.com/macros/s/AKfycbwrEelc6fs70bxp-L8NM5Gm5xD0OxHsss_L0ofV12D_fdNovrDY54nt6FSgRKG5RRq-Vg/exec", // Replace with your Pastiyum Apps Script URL
-    googleSheetId: "14CSGeIU9_YXpQ2di55oqymDM3RXZV3G07Cw5PX-XoFs", // Pastiyum Google Sheet ID
-    logo: pastiyumLogo,
-    label: pastiyumLabel,
+    name: "Kitchen One Special",
+    price: 480.00,
+    category: "Pizza",
+    manufacturer: "Kitchen One",
+    reviewWebhookUrl: "", // Add your Google Apps Script URL for reviews
+    googleSheetId: "", // Add your Google Sheet ID
+    logo: kitchenOneSpecial,
+    label: kitchenOneSpecial,
     productImages: [
-      pastiyumProduct2,
-      pastiyumProduct3
+      kitchenOneSpecial
     ],
-    description: "The proposed product is banana pastillas, a product that innovates traditional pastillas to provide enhanced taste and satisfaction for customers. Pastillas are ideal for snacks and treats."
+    sizes: [
+      { label: 'Small (10")', price: 270.00 },
+      { label: 'Medium (14")', price: 480.00 },
+      { label: 'Large (18")', price: 860.00 }
+    ],
+    crustTypes: [
+      { label: 'Regular' },
+      { label: 'Thin' },
+      { label: 'Superthin' }
+    ],
+    sliceTypes: [
+      { label: '8 Regular Cut' },
+      { label: '16 Regular Cut' },
+      { label: '32 Square Cut' }
+    ],
+    description: "Our signature pizza with cheese, pepperoni, ham, bacon bits, ground pork, green & red bell peppers, onion, mushroom, pineapple and black olives. A perfect combination of meats and vegetables that delivers an explosion of flavors in every bite."
   },
   {
     id: 2,
-    name: "Langka Chips",
-    price: 35.00,
-    manufacturer: "BoRoRo Bites Company",
-    reviewWebhookUrl: "https://script.google.com/macros/s/AKfycbwayofzFmyILVavKPSbH3F0V5jkqGTspHhV1cG2xwmOIUFM-KAFrd7PF0sR1a--U4Yu/exec", // Replace with your Langka Chips Apps Script URL
-    googleSheetId: "14V8YbK7XrSGKRi1k5eh3KXYDn_lTecuSdsq_nurwNmg", // Langka Chips Google Sheet ID
-    logo: langkaLogo,
-    label: langkaLabel,
+    name: "All-Meat Pizza",
+    price: 390.00,
+    category: "Pizza",
+    manufacturer: "Kitchen One",
+    reviewWebhookUrl: "",
+    googleSheetId: "",
+    logo: allMeat,
+    label: allMeat,
     productImages: [
-      langkaProduct1,
-      langkaProduct2
+      allMeat
     ],
-    description: `Langka Chips are crispy, crunchy, and flavorful chips made from unripe jackfruit, available in Classic, Cheese, Sour Cream, BBQ, and Spicy flavors. This snack targets all genders aged 15 to 60 with the goal of promoting vegetable consumption among teenagers and encouraging a balanced diet for all consumers.`
+    sizes: [
+      { label: 'Small (10")', price: 220.00 },
+      { label: 'Medium (14")', price: 390.00 },
+      { label: 'Large (18")', price: 670.00 }
+    ],
+    crustTypes: [
+      { label: 'Regular' },
+      { label: 'Thin' },
+      { label: 'Superthin' }
+    ],
+    sliceTypes: [
+      { label: '8 Regular Cut' },
+      { label: '16 Regular Cut' },
+      { label: '32 Square Cut' }
+    ],
+    description: "A meat lover's dream! Loaded with cheese, pepperoni, ham, bacon bits, and ground pork. Every bite is packed with savory, protein-rich flavors. Perfect for those who crave a hearty, meat-filled pizza experience."
   },
   {
     id: 3,
-    name: "Palawan Chips",
-    price: 12.00,
-    manufacturer: "CAMZA Co.",
-    reviewWebhookUrl: "https://script.google.com/macros/s/AKfycbwFm1kYQVbIcdcwkTo2XhjVvcpEDUseInV1oxHZRr0Z6MvydF1c59cBZjQtV3JPHztd/exec", // Replace with your Palawan Chips Apps Script URL
-    googleSheetId: "1hDk0Xbn8n84a4Dy7LaC4mnq3aYjnUsS1tpXiF0VzRsA", // Palawan Chips Google Sheet ID
-    logo: palawanLogo,
-    label: palawanLabel,
+    name: "Cheeze Pizza",
+    price: 239.00,
+    category: "Pizza",
+    manufacturer: "Kitchen One",
+    reviewWebhookUrl: "",
+    googleSheetId: "",
+    logo: cheese,
+    label: cheese,
     productImages: [
-      palawanProduct1,
-      palawanProduct2,
-      palawanProduct3
+      cheese
     ],
     sizes: [
-      { label: 'Large', price: 50.00 },
-      { label: 'Small', price: 12.00 }
+      { label: 'Small (10")', price: 140.00 },
+      { label: 'Medium (14")', price: 239.00 },
+      { label: 'Large (18")', price: 399.00 }
     ],
-    description: `Palawan chips is made with Palawan root crops with a scientific name “Giant swamp taro”. According to the study conducted by UP Los Baños (Santonia, 2022), Palawan contains many Vitamins and Minerals. It contains Protein, Vitamin A, Vitamin C, Zinc, Iron and Calcium. With this, the Palawan chips are healthy and good for everyone. A snack that can be enjoyed by everyone, anytime and everywhere, an on-the-go snack good for people who want to enjoy their food while walking. In this generation, people want to explore and try new things and this Palawan chips will satisfy their cravings for finding unique kinds of chips.  The Palawan chips come in a variety of flavors, which are Original, Cheese, Sour and Cream, and Barbeque flavors. Palawan chips embody the rich flavors and natural goodness of a unique root crop, making it a delicious treat. 
-Palawan chips are appetizing and flavorful along with ready-made snacks produced by natural as well as sustainable ingredients and freshly harvested Palawan root crops. Catering to various dietary preferences, offering a guilt-free snack making it a good choice for those looking for a healthy satisfying snack good for health-conscious customers. Palawan chips are a delicious option for those who are looking an on-the-go snack or an appetizer. Providing a high consistency of crispy texture amidst a perfect balance of a variety of flavors. It is also a cost-effective alternative for premium snacks in which customers can enjoy a snack with quality, healthy, convenient and budget-friendly.
-A new and unique kind of chip that will help promote local goods in Gubat because the main ingredient for these chips is giant swamp taro root crops which can be found on local places of Gubat, ensuring a fast and seamless production of the product. Palawan chip is available from Monday to Friday from 8:00 AM to 5:00 PM at Gubat National High School. The pricing range will be 50 Pesos per pack.`
+    crustTypes: [
+      { label: 'Regular' },
+      { label: 'Thin' },
+      { label: 'Superthin' }
+    ],
+    sliceTypes: [
+      { label: '8 Regular Cut' },
+      { label: '16 Regular Cut' },
+      { label: '32 Square Cut' }
+    ],
+    description: "Simple yet delicious. Our classic cheese pizza features a perfect blend of premium mozzarella cheese on our signature hand-tossed crust. Sometimes the simplest things are the best - this timeless favorite never disappoints."
   },
   {
     id: 4,
-    name: "Pilipulp",
-    price: 20.00,
-    manufacturer: "Pili Pulp Pastry",
-    reviewWebhookUrl: "https://script.google.com/macros/s/AKfycbyCWVxL-eiV3_TR4gKe5k10k-qN24t_EkSUZ1Px4abqtaYvsVp2XUhK5MVQ0OhfU5d8/exec", // Replace with your Pilipulp Apps Script URL
-    googleSheetId: "1WDvzWYTARmhBTyXry226k_pUvFuyxZE5Pir-HYmZMwY", // Pilipulp Google Sheet ID
-    logo: pilipulpLogo,
-    label: pilipulpLabel,
+    name: "Hawaiian",
+    price: 305.00,
+    category: "Pizza",
+    manufacturer: "Kitchen One",
+    reviewWebhookUrl: "",
+    googleSheetId: "",
+    logo: hawaiian,
+    label: hawaiian,
     productImages: [
-      pilipulpProduct1,
-      pilipulpProduct2
+      hawaiian
     ],
-    description: "Pili Pulp Cookie is made with pili pulp and pili nut that is locally sourced specifically in Union, Gubat, Sorsogon. These ingredients give the cookies a sweet and nutty flavor, unlike the traditional cookie found in the local market. Moreover, the target market of pili pulp cookies are male and female aged 12 to 60 years old and residents from eight (8) barangays of Gubat: Pinontingan, Panganiban, Balud Sur, Balud Norte, Cota na Daco, Luna Candol, Manook, and Paradijon. Pili Pulp Cookies is an alternative snack that is good for everyone, from children who enjoy sweet treats to adults who’s looking for a unique flavor of snacks. The cookies unique ingredient can attract those individuals seeking for a delicious and healthy snack. The cookie is relevant to address the consumers need because consumers will no longer worry about their sugar intake because of its healthy ingredient.According to the study of Dumandan, et al (2022), Pili Pulp contains an appreciable amount of oil that has a carotenoid, phytosterols and tocopherols. These benefits act as antioxidants that benefits the skin and the immune system’s function. In addition, the oil of the Pili Pulp has Phytosterols that lowers cholesterol, antioxidant and, anti- bacterial. The company assures that the pili pulp cookies are made to make everyone healthy and at the same time satisfy their cravings without worrying too much.Pili Pulp Pastry company's objective focuses on producing a unique product made with Pili as one of Bicol's products. The company assures every customer to produce a product that would satisfy their cravings. Furthermore, the company also aims to provide support to local Pili farmers by buying their products directly, in this way the proponents can help and support each farmer. The Pili Pulp Pastry offer a medium size cookies with a price range of Php 20.00 per piece. The product will be packed in a kraft paper pack and box, and each cookie is sealed with plastic to maintain the crispiness of the product. Each pack contains five (5) pieces of cookies that will be sold for ₱90.00, and every box contains ten (10) pieces of cookies that will be sold for ₱180.00 as discounted price. add this in the pilipulp in description",
+    sizes: [
+      { label: 'Small (10")', price: 180.00 },
+      { label: 'Medium (14")', price: 305.00 },
+      { label: 'Large (18")', price: 530.00 }
+    ],
+    crustTypes: [
+      { label: 'Regular' },
+      { label: 'Thin' },
+      { label: 'Superthin' }
+    ],
+    sliceTypes: [
+      { label: '8 Regular Cut' },
+      { label: '16 Regular Cut' },
+      { label: '32 Square Cut' }
+    ],
+    description: "A tropical delight combining sweet pineapple chunks with savory ham and ground beef. The perfect balance of sweet and salty flavors that creates an unforgettable taste experience. A crowd-pleaser for all ages."
   },
   {
     id: 5,
-    name: "Pawpaya Crackers",
-    price: 23.00,
-    manufacturer: "Crispaya Co.",
-    reviewWebhookUrl: "https://script.google.com/macros/s/AKfycbzdtEAZ2E3ahyrxyljLR3HKfEEi3qx7FTSNWvyelpmF3-2c6tNqWILYWOFdNLINUX8S/exec", // Replace with your Pawpaya Crackers Apps Script URL
-    googleSheetId: "1Az-HVGHTVl0N5CJTLxBjQIrNTvJioNsffPGAjR-1VJk", // Pawpaya Crackers Google Sheet ID
-    logo: pawpayaLogo,
-    label: pawpayaLabel,
+    name: "Pepperoni and Ham",
+    price: 335.00,
+    category: "Pizza",
+    manufacturer: "Kitchen One",
+    reviewWebhookUrl: "",
+    googleSheetId: "",
+    logo: pepperoniHam,
+    label: pepperoniHam,
     productImages: [
-      pawpayaProduct1,
-      pawpayaProduct2
+      pepperoniHam
     ],
-    description: "The Pawpaya Crackers is an innovative food venture that introduces papaya-based crackers as a unique and healthy alternative to traditional snacks.",
+    sizes: [
+      { label: 'Small (10")', price: 195.00 },
+      { label: 'Medium (14")', price: 335.00 },
+      { label: 'Large (18")', price: 570.00 }
+    ],
+    crustTypes: [
+      { label: 'Regular' },
+      { label: 'Thin' },
+      { label: 'Superthin' }
+    ],
+    sliceTypes: [
+      { label: '8 Regular Cut' },
+      { label: '16 Regular Cut' },
+      { label: '32 Square Cut' }
+    ],
+    description: "A classic combination of spicy pepperoni and tender ham slices. Topped with premium mozzarella cheese and our special blend of herbs. A perfect choice for traditional pizza lovers."
+  },
+  {
+    id: 6,
+    name: "Aloha Chicken Barbecue Pizza",
+    price: 329.00,
+    category: "Pizza",
+    manufacturer: "Kitchen One",
+    reviewWebhookUrl: "",
+    googleSheetId: "",
+    logo: alohaChickenBBQ,
+    label: alohaChickenBBQ,
+    productImages: [
+      alohaChickenBBQ
+    ],
+    sizes: [
+      { label: 'Small (10")', price: 185.00 },
+      { label: 'Medium (14")', price: 329.00 },
+      { label: 'Large (18")', price: 545.00 }
+    ],
+    crustTypes: [
+      { label: 'Regular' },
+      { label: 'Thin' },
+      { label: 'Superthin' }
+    ],
+    sliceTypes: [
+      { label: '8 Regular Cut' },
+      { label: '16 Regular Cut' },
+      { label: '32 Square Cut' }
+    ],
+    description: "A unique and flavorful pizza featuring cheese, tender chicken, onion and pineapple in our signature barbecue sauce. The perfect blend of smoky, sweet, and savory flavors that will transport you to the islands."
+  },
+  {
+    id: 7,
+    name: "Creamy Chicken and Ham Pasta",
+    price: 180.00,
+    category: "Pasta",
+    manufacturer: "Kitchen One",
+    reviewWebhookUrl: "",
+    googleSheetId: "",
+    logo: creamyChickenPasta,
+    label: creamyChickenPasta,
+    productImages: [
+      creamyChickenPasta
+    ],
+    description: "Tender chicken and savory ham in a rich, creamy white sauce. Served over perfectly cooked pasta with a sprinkle of parmesan cheese. Comfort food at its finest."
+  },
+  {
+    id: 8,
+    name: "Oriental Spicy Chicken Pasta",
+    price: 190.00,
+    category: "Pasta",
+    manufacturer: "Kitchen One",
+    reviewWebhookUrl: "",
+    googleSheetId: "",
+    logo: orientalSpicyPasta,
+    label: orientalSpicyPasta,
+    productImages: [
+      orientalSpicyPasta
+    ],
+    description: "An Asian-inspired pasta dish featuring tender chicken in a spicy, flavorful sauce. Infused with aromatic spices and served with fresh vegetables. For those who enjoy bold, zesty flavors."
+  },
+  {
+    id: 9,
+    name: "Tuna Pasta in Fresh Tomatoes and Basil",
+    price: 170.00,
+    category: "Pasta",
+    manufacturer: "Kitchen One",
+    reviewWebhookUrl: "",
+    googleSheetId: "",
+    logo: tunaPasta,
+    label: tunaPasta,
+    productImages: [
+      tunaPasta
+    ],
+    description: "Fresh tuna mixed with ripe tomatoes and aromatic basil in a light, refreshing sauce. A Mediterranean-inspired dish that's both healthy and delicious. Perfect for a lighter meal option."
+  },
+  {
+    id: 10,
+    name: "Potato Wedges",
+    price: 120.00,
+    category: "Sides",
+    manufacturer: "Kitchen One",
+    reviewWebhookUrl: "",
+    googleSheetId: "",
+    logo: potatoWedges,
+    label: potatoWedges,
+    productImages: [
+      potatoWedges
+    ],
+    description: "Crispy on the outside, tender on the inside. Our hand-cut potato wedges are seasoned to perfection and served hot. The perfect side dish to complement any meal or enjoy on their own."
   }
 ];
