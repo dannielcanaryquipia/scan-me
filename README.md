@@ -126,7 +126,7 @@ The application supports light and dark themes, managed through React Context. T
 ### Key Features:
 - Theme persistence using localStorage
 - Smooth transitions between themes
-- System preference detection
+- System preference detection 
 - Accessible color contrast ratios
 
 ## 📞 Contact Information
