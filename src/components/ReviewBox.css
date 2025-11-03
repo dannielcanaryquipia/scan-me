@@ -75,7 +75,7 @@
 }
 
 .star.active {
-  color: #fbbf24;
+  color: var(--primary-color);
 }
 
 .star:focus {

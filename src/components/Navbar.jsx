@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTheme } from '../contexts/ThemeContext';
+import logo from '../assets/images/logo.png';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -11,7 +12,7 @@ const Navbar = () => {
   // Function to handle scroll and update active section
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'products'];
+      const sections = ['home', 'about', 'products', 'contact'];
       const scrollPosition = window.scrollY + 100; // Offset for navbar height
 
       for (const section of sections) {
@@ -36,14 +37,18 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Handle click events for smooth scrolling
+  // Handle click events for smooth scrolling with offset
   const handleNavClick = (e, sectionId) => {
     e.preventDefault();
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
+      const offset = 80; // Navbar height
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
       });
       // Close mobile menu after navigation
       setIsMobileMenuOpen(false);
@@ -95,7 +100,11 @@ const Navbar = () => {
         <div className="navbar-content">
           {/* Logo */}
           <Link to="/" className="navbar-logo" onClick={handleLogoClick}>
-            <span className="navbar-logo-text">ScanMe!</span>
+            <img 
+              src={logo} 
+              alt="Kitchen One" 
+              className="navbar-logo-image"
+            />
           </Link>
 
           {/* Desktop Navigation Links */}
@@ -125,6 +134,15 @@ const Navbar = () => {
                 onClick={(e) => handleNavClick(e, 'products')}
               >
                 Products
+              </a>
+            </li>
+            <li className="navbar-nav-item">
+              <a 
+                href="#contact" 
+                className={`navbar-nav-link ${activeSection === 'contact' ? 'active' : ''}`}
+                onClick={(e) => handleNavClick(e, 'contact')}
+              >
+                Contact
               </a>
             </li>
             <li className="navbar-nav-item">
@@ -210,6 +228,16 @@ const Navbar = () => {
               >
                 <span className="mobile-menu-icon">🛍️</span>
                 <span className="mobile-menu-text">Products</span>
+              </a>
+            </li>
+            <li className="mobile-menu-item">
+              <a 
+                href="#contact" 
+                className={`mobile-menu-link ${activeSection === 'contact' ? 'active' : ''}`}
+                onClick={(e) => handleNavClick(e, 'contact')}
+              >
+                <span className="mobile-menu-icon">📧</span>
+                <span className="mobile-menu-text">Contact</span>
               </a>
             </li>
             <li className="mobile-menu-item">

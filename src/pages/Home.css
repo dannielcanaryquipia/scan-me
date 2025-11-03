@@ -43,8 +43,8 @@
 }
 
 .home-hero-brand {
-  color: var(--theme-primary);
-  background: linear-gradient(135deg, var(--theme-primary) 0%, var(--theme-primary-light) 100%);
+  color: #D4AF37;
+  background: linear-gradient(135deg, #D4AF37 0%, #E5C869 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -82,9 +82,9 @@
   color: white;
 }
 
-/* Dark theme: primary is yellow, text should be black */
+/* Dark theme: primary is dark yellow, text should be black */
 [data-theme="dark"] .home-hero .btn.btn-primary {
-  color: #111827; /* near-black for contrast on yellow */
+  color: #111827; /* near-black for contrast on dark yellow */
 }
 
 .home-hero-btn:hover {
@@ -96,6 +96,15 @@
 .home-about {
   padding: var(--spacing-24) 0;
   background-color: var(--background-secondary);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.home-about.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .home-about-content {
@@ -158,6 +167,15 @@
 .home-products {
   padding: var(--spacing-24) 0;
   background-color: var(--background-primary);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.home-products.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .home-products-header {

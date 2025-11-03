@@ -1,16 +1,23 @@
- import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { products } from '../data/products';
 import ImageSlider from '../components/ImageSlider';
-import ProductLabelCard from '../components/ProductLabelCard';
 import ProductContentCard from '../components/ProductContentCard';
 import './ProductDetails.css';
 
 const ProductDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  
   const product = products.find(p => p.id === parseInt(id));
+
+  // Scroll to top when component mounts or product ID changes
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'instant'
+    });
+  }, [id]);
 
   if (!product) {
     return (
@@ -33,11 +40,6 @@ const ProductDetails = () => {
     );
   }
 
-  const handleReviewClick = () => {
-    console.log('Review button clicked for product:', product.name);
-    // Here you can add analytics or other tracking
-  };
-
   const handleBackToProducts = () => {
     // Navigate to home page first
     navigate('/');
@@ -56,6 +58,12 @@ const ProductDetails = () => {
 
   return (
     <div className="product-details-page">
+
+      {/* Products Title */}
+      <div className="product-details-title-section">
+        <h1 className="product-details-title">Products</h1>
+      </div>
+      
       <div className="container">
         {/* Back Button */}
         <div className="product-details-back">
@@ -83,20 +91,16 @@ const ProductDetails = () => {
           </button>
         </div>
 
+
+
         {/* Product Details Grid */}
         <div className="product-details-grid">
-          {/* Product Label - Full width on its own row */}
-          <div className="product-details-label">
-            <ProductLabelCard product={product} />
-          </div>
-
           {/* Product Content and Images Container */}
           <div className="product-details-main">
             {/* Product Content */}
             <div className="product-details-content">
               <ProductContentCard 
                 product={product} 
-                onReviewClick={handleReviewClick}
               />
             </div>
 

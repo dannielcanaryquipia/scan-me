@@ -2,40 +2,41 @@ import React, { useState, useEffect } from 'react';
 import './ImageCarousel.css';
 import SliderNavButton from './SliderNavButton';
 
-// Import the PNG images
-import langkaChips from '../assets/images/langka-chips.png';
-import palawanChips from '../assets/images/palawan-chips.png';
-import pastiyum from '../assets/images/pastiyum.png';
-import pilipulp from '../assets/images/pilipulp.png';
-import pawpayaCrackers from '../assets/images/pawpaya-crackers.png'
+// Import Kitchen One food images
+import kitchenOneSpecial from '../assets/images/Kitchen One Special.jpeg';
+import allMeat from '../assets/images/All-meat.jpeg';
+import hawaiian from '../assets/images/Hawaiian.jpeg';
+import creamyChickenPasta from '../assets/images/Creamy Chicken and Ham Pasta.jpeg';
+import orientalSpicyPasta from '../assets/images/Oriental Spicy Chicken Pasta.jpeg';
+
 const ImageCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   
   const images = [
     {
-      src: langkaChips,
-      alt: 'Langka Chips - Local Product',
-      title: 'Langka Chips'
+      src: kitchenOneSpecial,
+      alt: 'Kitchen One Special Pizza',
+      title: 'Kitchen One Special'
     },
     {
-      src: palawanChips,
-      alt: 'Palawan Chips - Local Product',
-      title: 'Palawan Chips'
+      src: allMeat,
+      alt: 'All-Meat Pizza',
+      title: 'All-Meat Pizza'
     },
     {
-      src: pastiyum,
-      alt: 'Pastiyum - Local Product',
-      title: 'Pastiyum'
+      src: hawaiian,
+      alt: 'Hawaiian Pizza',
+      title: 'Hawaiian Pizza'
     },
     {
-      src: pilipulp,
-      alt: 'Pilipulp - Local Product',
-      title: 'Pilipulp'
+      src: creamyChickenPasta,
+      alt: 'Creamy Chicken and Ham Pasta',
+      title: 'Creamy Chicken Pasta'
     },
     {
-      src: pawpayaCrackers,
-      alt: 'Pawpaya Crackers - Local Product',
-      title: 'Pawpaya Crackers'
+      src: orientalSpicyPasta,
+      alt: 'Oriental Spicy Chicken Pasta',
+      title: 'Oriental Spicy Pasta'
     }
   ];
 
