@@ -1,28 +1,28 @@
-import pastiyumLogo from '../assets/images/products/pastiyum/pastiyum-logo.jpg';
+import pastiyumLogo from '../assets/images/products/pastiyum/pastiyum-logo.png';
 import pastiyumLabel from '../assets/images/products/pastiyum/pastiyum-label.jpg';
 
 import pastiyumProduct2 from '../assets/images/products/pastiyum/pastiyum-product-2.jpg';
 import pastiyumProduct3 from '../assets/images/products/pastiyum/pastiyum-product-3.jpg';
 
-import langkaLogo from '../assets/images/products/langka-chips/langka-chips-logo.jpg';
+import langkaLogo from '../assets/images/products/langka-chips/langka-chips-logo.png';
 import langkaLabel from '../assets/images/products/langka-chips/langka-chips-label.jpg';
 import langkaProduct1 from '../assets/images/products/langka-chips/langka-chips-product-1.jpg';
 import langkaProduct2 from '../assets/images/products/langka-chips/langka-chips-product-2.jpg';
 
 
 
-import palawanLogo from '../assets/images/products/palawan-chips/palawan-chips-logo.jpg';
+import palawanLogo from '../assets/images/products/palawan-chips/palawan-chips-logo.png';
 import palawanLabel from '../assets/images/products/palawan-chips/palawan-chips-label.jpg';
 import palawanProduct1 from '../assets/images/products/palawan-chips/palawan-chips-product-1.jpg';
 import palawanProduct2 from '../assets/images/products/palawan-chips/palawan-chips-product-2.jpg';
 import palawanProduct3 from '../assets/images/products/palawan-chips/palawan-chips-product-3.jpg';
 
-import pilipulpLogo from '../assets/images/products/pilipulp/pilipulp-logo.jpg';
+import pilipulpLogo from '../assets/images/products/pilipulp/pilipulp-logo.png';
 import pilipulpLabel from '../assets/images/products/pilipulp/pilipulp-label.jpg';
 import pilipulpProduct1 from '../assets/images/products/pilipulp/pilipulp-product-1.jpg';
 import pilipulpProduct2 from '../assets/images/products/pilipulp/pilipulp-product-2.jpg';
 
-import pawpayaLogo from '../assets/images/products/pawpaya-crackers/pawpaya-crackers-logo.jpg';
+import pawpayaLogo from '../assets/images/products/pawpaya-crackers/pawpaya-crackers-logo.png';
 import pawpayaLabel from '../assets/images/products/pawpaya-crackers/pawpaya-crackers-label.jpg';
 import pawpayaProduct1 from '../assets/images/products/pawpaya-crackers/pawpaya-crackers-product-1.jpg';
 import pawpayaProduct2 from '../assets/images/products/pawpaya-crackers/pawpaya-crackers-product-2.jpg';
