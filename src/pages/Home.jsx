@@ -58,9 +58,9 @@ const Home = () => {
       <section id="products" className="home-products">
         <div className="container">
           <div className="home-products-header">
-            <h2 className="home-products-title">Our Products</h2>
+            <h2 className="home-products-title">Products Offered</h2>
             <p className="home-products-subtitle">
-              Discover our range of delicious and healthy snacks
+              Discover the range of delicious and healthy snacks
             </p>
           </div>
           <Products />
