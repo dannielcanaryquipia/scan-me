@@ -39,10 +39,9 @@ const Home = () => {
                   flavors and traditions of our community.
                 </p>
                 <p className="home-about-description">
-                  Our mission is to promote local businesses and provide you with access to high-quality, 
-                  authentic products that tell the story of our region. From traditional pastillas to 
-                  innovative chip varieties, each product represents the dedication and craftsmanship of 
-                  local producers.
+                    Our mission is to empower young entrepreneurs and small bussinesses in the Municipality of Gubat, Sorosogon,
+                    by providing a simple, QR Code-based web platform that delivers instant product transparency to consumers and actionable
+                    customers feedback to sellers. 
                 </p>
                 {/* Features removed as requested */}
               </div>
