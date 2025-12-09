@@ -1,29 +1,23 @@
 /* Home Page Styles */
 .home-page {
-  min-height: 100vh;
   background-color: var(--background-primary);
+  position: relative;
+  z-index: 1;
 }
 
 /* Hero Section */
 .home-hero {
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  background: linear-gradient(135deg, var(--background-primary) 0%, var(--background-secondary) 100%);
   position: relative;
   overflow: hidden;
+  color: var(--text-primary);
+  margin: 0;
+  padding: 0;
+  padding-top: 80px; /* Match navbar height */
+  margin-top: -80px; /* Pull content up behind navbar */
 }
 
-.home-hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23f1f5f9" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23f1f5f9" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="%23f1f5f9" opacity="0.05"/><circle cx="10" cy="60" r="0.5" fill="%23f1f5f9" opacity="0.05"/><circle cx="90" cy="40" r="0.5" fill="%23f1f5f9" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-  opacity: 0.3;
-}
+/* Remove the grain effect since we have a video background */
 
 .home-hero-content {
   text-align: center;
@@ -31,6 +25,15 @@
   margin: 0 auto;
   position: relative;
   z-index: 1;
+  padding: 2rem;
+  border-radius: var(--border-radius-lg);
+  backdrop-filter: blur(4px);
+  padding-top: calc(80px + 2rem); /* Navbar height + original padding */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 .home-hero-title {

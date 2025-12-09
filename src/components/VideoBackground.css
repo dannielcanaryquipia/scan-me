@@ -1,0 +1,82 @@
+.video-background {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--background-primary);
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 0; /* Ensure it stays below the navbar */
+}
+
+.video-background__video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 0;
+}
+
+.video-fallback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+  z-index: 1;
+}
+
+.video-background__overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+/* Theme-based overlay colors */
+.video-background__overlay.light {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.video-background__overlay.dark {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Ensure content is readable over the video */
+.video-background h1,
+.video-background h2,
+.video-background h3,
+.video-background p,
+.video-background a {
+  color: var(--text-color);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Adjustments for better visibility in dark mode */
+[data-theme="dark"] .video-background h1,
+[data-theme="dark"] .video-background h2,
+[data-theme="dark"] .video-background h3,
+[data-theme="dark"] .video-background p,
+[data-theme="dark"] .video-background a {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
