@@ -3,9 +3,9 @@ import './ImageCarousel.css';
 import SliderNavButton from './SliderNavButton';
 
 // Import the PNG images
-import langkaChips from '../assets/images/langka-chips.png';
+import langkaChips from '../assets/images/langka-chips.jpg';
 import palawanChips from '../assets/images/palawan-chips.png';
-import pastiyum from '../assets/images/pastiyum.png';
+import pastiyum from '../assets/images/pastiyum.jpg';
 import pilipulp from '../assets/images/pilipulp.png';
 import pawpayaCrackers from '../assets/images/pawpaya-crackers.png'
 const ImageCarousel = () => {
