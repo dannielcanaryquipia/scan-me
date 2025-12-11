@@ -8,24 +8,31 @@
 
 ScanMe is a modern web application that showcases local products from Gubat, Sorsogon. The platform allows users to browse through a curated selection of handcrafted snacks and treats, with detailed product pages and an intuitive user interface.
 
-## 🚀 Features
+## 🚀 Key Features
 
 - **Responsive Design**: Works seamlessly on desktop and mobile devices
-- **Product Showcase**: Beautiful display of local products with detailed information
 - **Interactive UI**: Smooth animations and transitions for better user experience
 - **Dark/Light Theme**: Built-in theme support with context API
-- **Product Details**: Comprehensive product pages with image galleries and specifications
-- **Modern Stack**: Built with the latest React and Vite for optimal performance
+- **Product Showcase**: Beautiful display of local products with detailed information
+- **Product Details**: Comprehensive pages with image galleries and specifications
 - **Accessibility**: WCAG compliant with proper focus management and screen reader support
 - **Performance**: Optimized assets and efficient code splitting
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: React 19
-- **Build Tool**: Vite
-- **Routing**: React Router v7
-- **State Management**: React Context API
-- **Styling**: CSS Modules with custom theming
+### Core Technologies
+- **Frontend**: React 19 with modern hooks
+- **Build Tool**: Vite for fast development and optimized builds
+- **Deployment**: Vercel for CI/CD and global CDN
+- **Version Control**: Git with Git LFS for large file management
+
+### Key Dependencies
+
+- **Frontend**: React 19 with modern hooks
+- **Build Tool**: Vite for fast development and optimized builds
+- **Routing**: React Router v7 for seamless navigation
+- **State Management**: React Context API for theme and global state
+- **Styling**: CSS Modules with custom theming support
 - **Linting**: ESLint with React Hooks and React Refresh plugins
 - **Package Manager**: npm
 
@@ -33,48 +40,90 @@ ScanMe is a modern web application that showcases local products from Gubat, Sor
 
 ```
 scan-me/
-├── public/              # Static files
+├── public/              # Static files and assets
 ├── src/
-│   ├── assets/          # Images, fonts, and other static assets
+│   ├── assets/          # Images, fonts, and static assets
 │   ├── components/      # Reusable UI components
-│   │   ├── Navbar/      # Navigation component
-│   │   ├── Footer/      # Footer component
-│   │   ├── ImageCarousel/  # Image carousel for product display
-│   │   ├── ImageSlider/  # Product image slider
-│   │   ├── ProductCard/  # Product card component
-│   │   ├── ProductLabelCard/  # Product label display
-│   │   └── ProductContentCard/  # Product details content
+│   │   ├── Navbar/      # Responsive navigation
+│   │   ├── Footer/      # Site footer with links
+│   │   ├── ImageCarousel/  # Interactive product image carousel
+│   │   ├── ImageSlider/  # Smooth image slider component
+│   │   ├── ProductCard/  # Product preview cards
+│   │   ├── ProductLabelCard/  # Product information labels
+│   │   └── ProductContentCard/  # Detailed product information
 │   │
 │   ├── contexts/        # React context providers
-│   │   └── ThemeContext/  # Theme management
+│   │   └── ThemeContext/  # Theme and UI state management
 │   │
-│   ├── data/            # Static data files
-│   │   └── products.js  # Product data
+│   ├── data/            # Application data
+│   │   └── products.js  # Product catalog and metadata
 │   │
-│   ├── pages/           # Page components
-│   │   ├── Home/        # Home page component
-│   │   └── ProductDetails/  # Product details page
+│   ├── pages/           # Route components
+│   │   ├── Home/        # Landing page with featured products
+│   │   └── ProductDetails/  # Detailed product view
 │   │
-│   ├── styles/          # Global styles and themes
-│   │   ├── base.css     # Base styles
+│   ├── styles/          # Global styles and theming
+│   │   ├── base.css     # CSS reset and base styles
 │   │   ├── components/  # Component-specific styles
 │   │   └── utils/       # Utility classes and mixins
 │   │
-│   ├── App.jsx          # Main application component
+│   ├── App.jsx          # Root application component
 │   └── main.jsx         # Application entry point
 │
-├── .gitignore
-├── package.json         # Project dependencies and scripts
+├── .gitignore           # Git ignore rules
+├── package.json         # Project configuration and scripts
 ├── vite.config.js       # Vite configuration
-└── README.md            # This file
+└── README.md            # Project documentation
 ```
+
+## 🚀 Deployment
+
+The application is deployed on Vercel for seamless CI/CD and global CDN distribution.
+
+[![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
+
+### Git LFS Setup
+
+This project uses Git LFS (Large File Storage) to manage large media files like the background video. Follow these steps to set up Git LFS:
+
+1. Install Git LFS if you haven't already:
+   ```bash
+   # For macOS using Homebrew
+   brew install git-lfs
+   
+   # For Windows using Chocolatey
+   choco install git-lfs
+   
+   # For Debian/Ubuntu
+   sudo apt-get install git-lfs
+   ```
+
+2. Initialize Git LFS in your repository (only needed once per repository):
+   ```bash
+   git lfs install
+   ```
+
+3. Track large files (already configured in `.gitattributes`):
+   ```bash
+   # Example for tracking video files
+   git lfs track "*.mp4"
+   git add .gitattributes
+   git commit -m "Add LFS tracking for video files"
+   ```
+
+4. Push your changes as usual. Large files will be handled by Git LFS:
+   ```bash
+   git add .
+   git commit -m "Add large video file"
+   git push
+   ```
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-- Node.js (v16 or later)
-- npm (v8 or later)
+- Node.js (v18 or later recommended)
+- npm (v9 or later) or yarn
 
 ### Installation
 
@@ -87,47 +136,105 @@ scan-me/
 2. Install dependencies:
    ```bash
    npm install
+   # or
+   yarn
    ```
 
 3. Start the development server:
    ```bash
    npm run dev
+   # or
+   yarn dev
    ```
 
 4. Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ### Building for Production
 
-To create a production build:
+Create an optimized production build:
 
 ```bash
 npm run build
+# or
+yarn build
 ```
 
-The build artifacts will be stored in the `dist/` directory.
+The production-ready files will be generated in the `dist/` directory.
 
-## 🎨 Theming
+## 🎨 Theming & UI
 
-The application supports light and dark themes, managed through React Context. The theme can be toggled using the theme switcher in the navigation bar.
+The application features a sophisticated theming system with:
 
-### Key Features:
-- Theme persistence using localStorage
-- Smooth transitions between themes
-- System preference detection
-- Accessible color contrast ratios
+- **Theme Persistence**: Saves user preference in localStorage
+- **System Preference**: Automatically detects system color scheme
+- **Smooth Transitions**: Elegant theme switching animations
+- **Accessibility**: WCAG 2.1 AA compliant color contrast
+- **Responsive Design**: Optimized for all screen sizes
 
-## 🧪 Testing
+## ⚡ Performance Optimizations
+
+- **Code Splitting**: Automatic route-based code splitting
+- **Lazy Loading**: Images and components load on demand
+- **Optimized Assets**: Compressed and properly sized images
+- **Efficient Rendering**: Memoized components for better performance
+- **Critical CSS**: Inlined critical styles for faster initial render
+
+## 🧪 Development
 
 Run the linter:
 ```bash
 npm run lint
+# or
+yarn lint
 ```
+
+Start development server with hot reload:
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+## 🌍 Browser Support
+
+The application is tested and works on:
+- Chrome (latest 2 versions)
+- Firefox (latest 2 versions)
+- Safari (latest 2 versions)
+- Edge (latest 2 versions)
+- Mobile browsers (iOS Safari, Chrome Mobile)
+
+## 🚀 Future Enhancements
+
+- **User Experience**
+  - Advanced product filtering and search
+  - Product categories and collections
+  - User reviews and ratings
+  - Wishlist functionality
+
+- **E-commerce Features**
+  - Shopping cart integration
+  - Checkout process
+  - Order tracking
+  - User accounts and profiles
+
+- **Content Management**
+  - Admin dashboard
+  - Product management
+  - Inventory tracking
+  - Sales analytics
+
+- **Integration**
+  - Google Forms for reviews
+  - Social media sharing
+  - Email subscription
+  - Payment gateway integration
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+We welcome contributions! Please follow these steps:
 
-1. Fork the project
+1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
@@ -140,50 +247,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🙏 Acknowledgments
 
 - Local producers of Gubat, Sorsogon for their amazing products
-- Open source community for the amazing tools and libraries that made this project possible
-│   ├── ImageSlider.jsx # Image carousel component
-│   ├── ProductLabelCard.jsx # Product label display
-│   └── ProductContentCard.jsx # Product information display
-├── pages/              # Page components
-│   ├── Products.jsx    # Products listing page
-│   └── ProductDetails.jsx # Individual product page
-├── data/               # Data files
-│   └── products.js     # Product data and images
-├── styles/             # CSS files
-│   └── constants.css   # CSS variables and utilities
-└── assets/             # Static assets
-    └── images/         # Product images
-```
-
-## Technologies Used
-
-- **React 19** - Modern React with hooks
-- **React Router DOM** - Client-side routing
-- **Vite** - Fast build tool and dev server
-- **Pure CSS** - Custom CSS with modern features
-- **CSS Grid & Flexbox** - Modern layout systems
-
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
-
-## Performance Features
-
-- Lazy loading for images
-- Optimized CSS with minimal redundancy
-- Efficient component re-rendering
-- Smooth animations with hardware acceleration
-- Responsive images with proper sizing
-
-## Future Enhancements
-
-- Google Forms integration for reviews
-- Search and filtering functionality
-- Product categories
-- Shopping cart functionality
-- User authentication
-- Admin dashboard for product management
+- Open source community for the amazing tools and libraries
+- All contributors who helped improve this project

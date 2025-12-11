@@ -62,6 +62,62 @@
   color: var(--primary-color);
 }
 
+/* Contact Information */
+.product-contact-info {
+  margin: var(--spacing-8) 0;
+  padding: var(--spacing-6);
+  background-color: var(--background-secondary);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+}
+
+.product-content-contact-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin: 0 0 var(--spacing-4) 0;
+  line-height: var(--line-height-tight);
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-3);
+  color: var(--text-secondary);
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+}
+
+.contact-icon {
+  margin-right: var(--spacing-3);
+  margin-top: 2px;
+  color: var(--primary-color);
+  flex-shrink: 0;
+  width: 20px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.contact-link,
+.contact-text {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  font-size: var(--font-size-base);
+  line-height: 1.4;
+}
+
+.contact-link:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
 /* Product Content Description */
 .product-content-description {
   margin-bottom: var(--spacing-8);

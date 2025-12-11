@@ -4,7 +4,7 @@ import { FaPhone, FaFacebook, FaMapMarkerAlt } from 'react-icons/fa';
 import './ProductCard.css';
 
 const ProductCard = ({ product }) => {
-  const { id, name, price, logo, manufacturer } = product;
+  const { id, name, price, logo, manufacturer, contact } = product;
 
   return (
     <div className="product-card-wrapper">
@@ -24,43 +24,10 @@ const ProductCard = ({ product }) => {
           <div className="product-card-content">
             <h3 className="product-card-title">{name}</h3>
             
-            {/* Contact Information */}
-            {product.contact && (
-              <div className="product-contact-info">
-                {product.contact.phone && product.contact.phone.length > 0 && (
-                  <div className="contact-item">
-                    <FaPhone className="contact-icon" />
-                    <div className="contact-details">
-                      {product.contact.phone.map((phone, index) => (
-                        <a key={index} href={`tel:${phone}`} className="contact-link">
-                          {phone}
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                )}
-                
-                {product.contact.facebook && (
-                  <div className="contact-item">
-                    <FaFacebook className="contact-icon" />
-                    <a 
-                      href={`https://facebook.com/${product.contact.facebook}`} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="contact-link"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      {product.contact.facebook}
-                    </a>
-                  </div>
-                )}
-                
-                {product.contact.location && (
-                  <div className="contact-item">
-                    <FaMapMarkerAlt className="contact-icon" />
-                    <span className="contact-text">{product.contact.location}</span>
-                  </div>
-                )}
+            {contact?.location && (
+              <div className="product-card-location">
+                <FaMapMarkerAlt className="product-card-location-icon" />
+                <span className="product-card-location-text">{contact.location}</span>
               </div>
             )}
             

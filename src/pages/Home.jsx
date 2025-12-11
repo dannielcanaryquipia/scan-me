@@ -37,7 +37,7 @@ const Home = () => {
             <div className="home-about-grid">
               <div className="home-about-text">
                 <p className="home-about-description">
-                  ScanMe is your gateway to discovering exceptional local products from Gubat, Sorsogon. 
+                  ScanMe is your gateway to discovering exceptional local products from Gubat and Barcelona, Sorsogon. 
                   We showcase a curated selection of handcrafted snacks and treats that celebrate the rich 
                   flavors and traditions of our community.
                 </p>
