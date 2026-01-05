@@ -13,7 +13,7 @@ const VideoBackground = ({ children }) => {
     if (!video) return;
 
     const handleCanPlay = () => {
-      console.log('Video can play');
+      console.log('');
       video.play().catch(error => {
         console.error('Video play failed:', error);
         setVideoError(true);
